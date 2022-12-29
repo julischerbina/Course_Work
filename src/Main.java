@@ -14,8 +14,8 @@ public class Main {
     public static void main(String[] args) {
         printEmployees();
         System.out.println("Общая сумма затрат на зарплату в месяц составляет: " + calculateSalary());
-        System.out.println("Минимальная зарплата среди сотрудников составляет: " + minSalary());
-        System.out.println("Максимальная зарплата среди сотрудников составляет: " + maxSalary());
+        System.out.println("Сотрудник с минимальной зарплатой: " + minSalary());
+        System.out.println("Сотрудник с максимальной зарплатой: " + maxSalary());
         System.out.println("Среднее значение зарплат составляет: " + averageSalary());
         ptintFullNames();
            }
@@ -32,23 +32,27 @@ public class Main {
         return sum;
     }
 
-    public static double minSalary() {
+    public static String minSalary() {
+        String result = employees[0].getFullName();
         double minSalary = employees[0].getSalary();
         for (Employee emp : employees) {
             if (emp.getSalary() < minSalary) {
                 minSalary = emp.getSalary();
+                result = emp.getFullName();
             }
         }
-        return minSalary;
+        return result;
     }
-    public static double maxSalary() {
+    public static String maxSalary() {
+        String result = employees[0].getFullName();
         double maxSalary = employees[0].getSalary();
         for (Employee emp : employees) {
             if (emp.getSalary() > maxSalary) {
                 maxSalary = emp.getSalary();
+                result = emp.getFullName();
             }
         }
-        return maxSalary;
+        return result;
     }
     public static double averageSalary() {
         return calculateSalary() / (float) employees.length;
