@@ -32,24 +32,24 @@ public class Main {
         return sum;
     }
 
-    public static String minSalary() {
-        String result = employees[0].getFullName();
+    public static Employee minSalary() {
+        Employee result = employees[0];
         double minSalary = employees[0].getSalary();
         for (Employee emp : employees) {
             if (emp.getSalary() < minSalary) {
                 minSalary = emp.getSalary();
-                result = emp.getFullName();
+                result = emp;
             }
         }
         return result;
     }
-    public static String maxSalary() {
-        String result = employees[0].getFullName();
+    public static Employee maxSalary() {
+        Employee result = employees[0];
         double maxSalary = employees[0].getSalary();
         for (Employee emp : employees) {
             if (emp.getSalary() > maxSalary) {
                 maxSalary = emp.getSalary();
-                result = emp.getFullName();
+                result = emp;
             }
         }
         return result;
